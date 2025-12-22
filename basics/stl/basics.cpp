@@ -124,10 +124,39 @@ int main() {
     cout << avg << endl;
 
     // ternary
-    
+
+    double marks;
+    cout << "Enter your marks: ";
+    cin >> marks;
+    string result = (marks >= 40) ? "passed" : "failed";
+    cout << result;
     
     // switch
 
+    char oper;
+    float num1, num2;
+    cout << "Enter an operator (+, -, *, /): ";
+    cin >> oper;
+    cout << "Enter two numbers: " << endl;
+    cin >> num1 >> num2;
+
+    switch (oper) {
+        case '+':
+            cout << num1 << " + " << num2 << " = " << num1 + num2;
+            break;
+        case '-':
+            cout << num1 << " - " << num2 << " = " << num1 - num2;
+            break;
+        case '*':
+            cout << num1 << " * " << num2 << " = " << num1 * num2;
+            break;
+        case '/':
+            cout << num1 << " / " << num2 << " = " << num1 / num2;
+            break;
+        default:
+            cout << "Error!";
+            break;
+    }
     
     return 0;
 }
