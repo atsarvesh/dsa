@@ -22,6 +22,55 @@ int main(){
         cout << number <<", ";
     }
 
+    // add elements to list
+    
+    list<int> nums = {1,2,3};
+
+    cout << "initial list: ";
+    for(int number : nums) {
+        cout << number <<", ";
+    }
+
+    nums.push_front(8); // add element at beginning
+    nums.push_back(9); // add element at end
+
+    cout << "final list: ";
+    for(int number : nums) {
+        cout << number <<", ";
+    }
+
+    // access list elements
+
+    cout << "first element: " << nums.front() << endl;
+    cout << "last element: " << nums.back() << endl;
+
+    // delete list elements
+
+    nums.pop_front(); // remove first element
+    nums.pop_back(); // remove last element
+
+    cout << "list after popping: ";
+    for(int number : nums) {
+        cout << number <<", ";
+    }
+
+    // other functions
+
+    nums.reverse(); // reverse the elements in list
+    nums.sort(); // sort
+    nums.unique(); // remove duplicate elements
+    nums.empty();
+    nums.size();
+    nums.clear(); // clear all values from list
+    // merge(); merges two sorted arrays
+
+    //iterate throught iterator
+
+    list<int> numbers = {1,2,4,8,7,5};
+
+    list<int>:: iterator itr = numbers.begin();
+    ++itr;
+    cout << "second element :" << *itr;
 
     return 0;
 }
