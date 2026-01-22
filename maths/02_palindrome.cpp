@@ -1,12 +1,34 @@
 #include <bits/stdc++.h>
 using namespace std;
 
-int countDigits(int n) {
-    if (n == 0) return 1; // Special case for 0
-    int count = 0;
-    while (n != 0) {
-        n /= 10;
-        count++;
+bool palindrome(int n){
+    
+    int rev_num = 0; // store reverse of a number
+    int dupl = n; // store original number
+
+    while(n>0){
+        int last_digit = n % 10; // last digit
+        rev_num = (rev_num * 10) + last_digit; // reverse number by appending the last digit
+        n = n/10; // remove last digit from original number
     }
-    return count;
+
+    if(dupl == rev_num){
+        return true;
+    } else {
+        return false;
+    }
+}
+
+int main(){
+    
+    int num;
+    cout << "Enter a number to check if it's a palindrome: " << endl;
+    cin >> num;
+
+    if(palindrome(num)){
+        cout << num << " is a palindrome" << endl;
+    } else {
+        cout << num << " is not a palindrome" << endl;
+    }
+    return 0;
 }
